@@ -5,14 +5,34 @@ var main = function () {
   var search_link = '/search?term=';
 
   var podcasts = {};
+  var retrievedObj;
+  if (retrievedObj = localStorage.getItem('podcasts')) {
+    podcasts = JSON.parse(retrievedObj);
+  }
 
   var table = $('table');
   var castList = $('.cast-list');
 
+  function loadCasts() {
+    for (podcastTitle in podcasts) {
+      castList.append($('<div>', {
+        'class': 'col s4',
+        'data-cast': podcastTitle,
+        click: function () {
+          displayEpisodes($(this).attr('data-cast'));
+        }
+      }).append($('<img>', {
+        src: podcasts[podcastTitle].meta.image.url
+      })));
+    }
+  }
+
+  loadCasts();
+
   function getFeed(feed_url) {
     $.get(rss_link + feed_url, function (data) {
       podcasts[data.meta.title] = data;
-
+      localStorage.setItem('podcasts', JSON.stringify(podcasts));
       castList.append($('<div>', {
         'class': 'col s4',
         'data-cast': data.meta.title,
