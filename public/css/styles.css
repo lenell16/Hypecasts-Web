@@ -1,0 +1,50 @@
+/* CSS file placeholder. */
+.music-footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:64px;
+  width:100%;
+  background-color: #343A3E;
+}
+
+.music-controls {
+  color: white;
+  font-size: 48px;
+  margin-top: -4px;
+}
+
+input[type=range] {
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#content, html, body {
+    height:100%;
+    overflow:hidden;
+}
+
+table #episode-list {
+  margin-bottom: 64px;
+}
+
+.cast-list .col {
+  padding: 0;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.podcast-list {
+    float: left;
+    height: 100%;
+    overflow: scroll;
+}
+#episode-list {
+    float: left;
+    height: 100%;
+    overflow: scroll;
+}
