@@ -26,8 +26,16 @@
   <div class="row" id="content">
     <div class="col s3 podcast-list">
       <div class="row">
-        <input type="text" name="name" id="searchbox">
-        <button name="search" class="waves-effect waves-light btn"><i class="mdi-action-search"></i></button>
+        <form class="">
+          <div class="row">
+            <div class="input-field">
+              <input type="text" name="name" id="searchbox">
+              <button name="search" class="waves-effect waves-light btn"><i class="mdi-content-add"></i></button>
+              <label for="searchbox">Add RSS Feed</label>
+            </div>
+          </div>
+        </form>
+
       </div>
       <div class="row">
         <div class="cast-list">
@@ -50,7 +58,7 @@
           <span class="mdi-av-skip-previous"></span>
         </div>
         <div class="col s4">
-          <span class="mdi-av-play-arrow"></span>
+          <span class="mdi-av-play-arrow playPause"></span>
         </div>
         <div class="col s4">
           <span class="mdi-av-skip-next"></span>
@@ -58,8 +66,11 @@
       </div>
       <div class="col s6">
         <!-- <p class="range-field"> -->
-          <input type="range" id="test5" min="0" max="100" value="0"/>
+          <input type="range" id="seeker" min="0" max="100" value="0"/>
         <!-- </p> -->
+      </div>
+      <div class="col s1">
+        <span id="currTime">-:--:--</span>/<span id="endTime">-:--:--</span>
       </div>
     </div>
   </div>
