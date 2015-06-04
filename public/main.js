@@ -1,4 +1,4 @@
-var podcasts = {};
+
 
 var main = function () {
 
@@ -8,6 +8,9 @@ var main = function () {
 
   // Currently Selected Podcast
   var currentCast = {};
+
+  var podcasts = {};
+
   var retrievedObj;
   if (retrievedObj = localStorage.getItem('podcasts')) {
     podcasts = JSON.parse(retrievedObj);
